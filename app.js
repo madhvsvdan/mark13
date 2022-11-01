@@ -188,7 +188,7 @@ function clickHandler(e) {
 
     const dateStr = getDateAsString(date);
     const list = checkPalindromeForAllDateFormats(dateStr);
-    const isPalindrome = false;
+    let isPalindrome = false;
 
     for (let i = 0; i < list.length; i++) {
       if (list[i]) {
@@ -197,17 +197,16 @@ function clickHandler(e) {
       }
     }
 
-    if (!isPalindrome) {
+    if (isPalindrome) {
+      resultDiv.innerHTML = `<div><h2>Your birthday is a palindrome!</h2></div><div><img src="/assets/happy.gif" width="100%"/></div>`;
+    } else {
       const [ctr1, nextDate] = getNextPalindromeDate(date);
       const [ctr2, prevDate] = getPreviousPalindromeDate(date);
-
       if (ctr1 > ctr2) {
         resultDiv.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed it by ${ctr2} days.`;
       } else {
         resultDiv.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr1} days.`;
       }
-    } else {
-      resultDiv.innerText = '🤯 Your birthday is a palindrome!';
     }
   }
 }
