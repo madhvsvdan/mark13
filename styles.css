@@ -23,25 +23,27 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 80vw;
   margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading {
   color: var(--colorPrimary);
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .label {
   font-weight: 700;
   margin: 1rem 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .input {
   text-align: center;
-  font-size: larger;
+  font-size: 1rem;
   margin: auto;
   width: auto;
   height: 10%;
@@ -53,11 +55,11 @@ body {
 #check-button {
   background-color: var(--colorPrimary);
   color: var(--colorLight);
-  font-size: larger;
+  font-size: 1rem;
   margin: 1rem auto;
-  width: auto;
-  height: 3rem;
-  border-radius: 1em;
+  min-width: 5rem;
+  height: 2.5rem;
+  border-radius: 1rem;
   cursor: pointer;
 }
 
@@ -74,3 +76,34 @@ p {
 #output {
   font-weight: bold;
 }
+
+/* Footer Start */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-links li a {
+  color: var(--dark);
+  padding: 1rem;
+  display: block;
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* Footer End */
